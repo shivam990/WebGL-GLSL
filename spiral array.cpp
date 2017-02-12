@@ -1,0 +1,31 @@
+#include<stdio.h>
+main()
+{
+	int m,i,j,n;
+	scanf("%d",&m);
+	n=m;
+	int a[m][m];
+	for(i=0;i<m;i++){
+		for(j=0;j<m;j++){
+			scanf("%d",&a[i][j]);
+		}
+	}
+	i=0;j=0;
+	while(m!=2){
+		for(i=i,j=j;j<m;j++){
+			printf("%d->",a[i][j]);
+		}
+		for(i=i+1;i<m;i++){
+			printf("%d->",a[i][j-1]);
+		}
+		for(i=i-1,j=j-2;j>=n-1-i;j--){
+			printf("%d->",a[i][j]);
+		}
+		for(j=j+1,i=i-1;i>=j+1;i--){
+			printf("%d->",a[i][j]);
+		}
+		i=i+1;
+		j=j+1;
+		m=m-1;
+	}
+}
